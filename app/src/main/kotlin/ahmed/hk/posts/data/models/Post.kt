@@ -10,4 +10,4 @@ import kotlinx.serialization.Serializable
 data class Post(
     @PrimaryKey val id: Int,
     val title: String,
-    @SerialName(value = "imageUrl") val image: String)
+    @SerialName(value = "url") val image: String)
