@@ -12,21 +12,18 @@ lifecycle = "2.8.1"
 core = "1.13.1"
 appCompat = "1.7.0"
 archTesting = "2.2.0"
-activity = "1.7.1"
-fragment = "1.9.0"
+activity = "1.9.0"
 coroutines = "1.7.3"
 material = "1.12.0"
 mockk = "1.13.2"
 navigation = "2.7.7"
-constraintLayout = "2.1.4"
-recyclerView = "1.3.2"
-legacy = "1.0.0"
 datastore = "1.1.1"
 hilt = "2.51.1"
 composeBom = "2024.05.00"
 paging = "3.3.0"
 hiltNavigationCompose = "1.2.0"
 coil = "2.6.0"
+jupiter = "5.10.2"
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "gradleplugin" }
@@ -41,6 +38,8 @@ lifecycle = ["lifecycle-runtime", "lifecycle-viewmodel", "lifecycle-java8"]
 room = ["room-runtime", "room-ktx", "room-paging"]
 navigation = ["navigation-fragment", "navigation-ui"]
 test = ["test-ext", "test-espresso"]
+jupiter = ["test-jupiter-api","test-jupiter-params"]
+jupiter-runtime = ["test-jupiter-engine","test-jupiter-vintage"]
 datastore = ["datastore-preferences-core", "datastore-preferences"]
 compose = ["compose-material3","compose-preview","compose-coil","compose-navigation","compose-hilt-navigation","compose-activity","compose-paging"]
 
@@ -74,25 +73,22 @@ kotlinx-serialization-json = { module = "org.jetbrains.kotlinx:kotlinx-serializa
 
 core = {module = "androidx.core:core-ktx", version.ref = "core"}
 appCompat = {module = "androidx.appcompat:appcompat", version.ref = "appCompat"}
-fragment = { module = "androidx.fragment:fragment-ktx", version.ref = "activity" }
-activity = { module = "androidx.activity:activity-ktx", version.ref = "fragment" }
 google-material = { module = "com.google.android.material:material", version.ref = "material" }
-recyclerView = { module = "androidx.recyclerview:recyclerview", version.ref = "recyclerView"}
-constraintLayout = { module = "androidx.constraintlayout:constraintlayout", version.ref = "constraintLayout"}
-legacy = { module = "androidx.legacy:legacy-support-v4", version.ref = "legacy"}
 navigation-fragment = { module = "androidx.navigation:navigation-fragment-ktx", version.ref = "navigation"}
 navigation-ui = { module = "androidx.navigation:navigation-ui-ktx", version.ref = "navigation"}
 okhttp3 = { module = "com.squareup.okhttp3:okhttp", version.ref = "okhttp3"}
 retrofit = { module = "com.squareup.retrofit2:retrofit", version.ref = "retrofit"}
-retrofit-converter-scalars = { module = "com.squareup.retrofit2:converter-scalars", version.ref = "retrofit"}
 retrofit-converter-kotlinx = { module = "com.jakewharton.retrofit:retrofit2-kotlinx-serialization-converter", version.ref = "retrofitKotlinx"}
-retrofit-gson = { module = "com.squareup.retrofit2:converter-gson", version.ref = "retrofit"}
-retrofit-moshi = { module = "com.squareup.retrofit2:converter-moshi", version.ref = "retrofit" }
 
-test-runner = { module = "androidx.test:runner", version = "1.5.2" }
 test-ext = { module = "androidx.test.ext:junit", version = "1.1.5" }
 test-espresso = { module = "androidx.test.espresso:espresso-core", version = "3.5.1" }
-test-mockk = { module = "io.mockk:mockk", version.ref = "mockk" }
+
+mockk = { module = "io.mockk:mockk", version.ref = "mockk" }
 test-core = { module = "androidx.arch.core:core-testing", version.ref = "archTesting" }
-test-json = { module = "org.json:json", version.ref = "testJson" }
 test-coroutines = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-test", version.ref = "coroutines" }
+
+test-jupiter-api = { module = "org.junit.jupiter:junit-jupiter-api", version.ref = "jupiter" }
+test-jupiter = { module = "org.junit.jupiter:junit-jupiter", version.ref = "jupiter" }
+test-jupiter-engine = { module = "org.junit.jupiter:junit-jupiter-engine", version.ref = "jupiter" }
+test-jupiter-params = { module = "org.junit.jupiter:junit-jupiter-params", version.ref = "jupiter" }
+test-jupiter-vintage = { module = "org.junit.vintage:junit-vintage-engine", version.ref = "jupiter" }

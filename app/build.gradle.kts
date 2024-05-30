@@ -68,6 +68,11 @@ dependencies {
     ksp (libs.hilt.compiler)
 
     testImplementation (libs.junit)
+    testImplementation (libs.mockk)
+    testImplementation (libs.test.core)
+    testImplementation (libs.test.coroutines)
+    testImplementation (libs.bundles.jupiter)
+    testRuntimeOnly (libs.bundles.jupiter.runtime)
     androidTestImplementation (libs.bundles.test)
 
     implementation (libs.core)
