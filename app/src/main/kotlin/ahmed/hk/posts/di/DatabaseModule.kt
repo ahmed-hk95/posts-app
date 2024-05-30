@@ -1,5 +1,6 @@
 package ahmed.hk.posts.di
 
+import ahmed.hk.posts.data.local.database.DatabaseRepository
 import ahmed.hk.posts.data.local.database.PostDao
 import ahmed.hk.posts.data.local.database.PostsDatabase
 import android.content.Context
@@ -25,4 +26,8 @@ object DatabaseModule {
     @Provides
     fun providePostsDao(postsDatabase: PostsDatabase): PostDao =
         postsDatabase.postsDao()
+
+    @Provides
+    fun provideDatabaseRepository(postsDao: PostDao): DatabaseRepository =
+        DatabaseRepository(postsDao)
 }

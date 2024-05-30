@@ -1,6 +1,7 @@
 package ahmed.hk.posts.di
 
 import ahmed.hk.posts.data.remote.APIs
+import ahmed.hk.posts.data.remote.NetworkRepository
 import ahmed.hk.posts.utils.Constants
 import android.content.Context
 import android.util.Log
@@ -8,6 +9,7 @@ import com.jakewharton.retrofit2.converter.kotlinx.serialization.asConverterFact
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
+import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
 import kotlinx.serialization.json.Json
 import okhttp3.Cache
@@ -116,7 +118,7 @@ object NetworkModule {
 
     @Provides
     @Singleton
-    internal fun provideCache(context: Context): Cache {
+    internal fun provideCache(@ApplicationContext context: Context): Cache {
         return Cache(context.cacheDir, CACHE_SIZE_BYTES)
     }
 
@@ -125,4 +127,9 @@ object NetworkModule {
     fun provideApi(retrofit: Retrofit): APIs {
         return retrofit.create(APIs::class.java)
     }
+
+    @Provides
+    fun provideNetworkRepository(api: APIs): NetworkRepository =
+        NetworkRepository(api)
+
 }
