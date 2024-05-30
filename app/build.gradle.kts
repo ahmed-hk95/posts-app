@@ -3,6 +3,7 @@ import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 plugins {
     alias (libs.plugins.android.application)
     alias (libs.plugins.kotlin.android)
+    alias (libs.plugins.compose.compiler)
     alias (libs.plugins.kotlin.serialization)
     alias (libs.plugins.hilt)
     alias (libs.plugins.kotlin.ksp)
@@ -51,13 +52,17 @@ android {
 dependencies {
     implementation (libs.bundles.navigation)
     implementation (libs.bundles.lifecycle)
-    implementation (libs.bundles.room)
     implementation (libs.google.material)
+    implementation (platform(libs.compose.bom))
+    implementation (libs.bundles.compose)
 
     implementation (libs.retrofit)
     implementation (libs.retrofit.converter.kotlinx)
     implementation (libs.okhttp3)
     implementation (libs.kotlinx.serialization.json)
+
+    implementation (libs.bundles.room)
+    ksp (libs.room.compiler)
 
     implementation (libs.hilt.android)
     ksp (libs.hilt.compiler)
