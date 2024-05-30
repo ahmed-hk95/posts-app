@@ -25,10 +25,10 @@ import javax.inject.Singleton
 @InstallIn(SingletonComponent::class)
 object NetworkModule {
 
-    private val READ_TIMEOUT = 30L
-    private val WRITE_TIMEOUT = 30L
-    private val CONNECTION_TIMEOUT = 10L
-    private val CACHE_SIZE_BYTES = 10 * 1024 * 1024L // 10 MB
+    private const val READ_TIMEOUT = 30L
+    private const val WRITE_TIMEOUT = 30L
+    private const val CONNECTION_TIMEOUT = 10L
+    private const val CACHE_SIZE_BYTES = 10 * 1024 * 1024L // 10 MB
 
     @Qualifier
     @Retention(AnnotationRetention.BINARY)
