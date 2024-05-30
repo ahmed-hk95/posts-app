@@ -13,6 +13,9 @@ class DatabaseRepository @Inject constructor(private val postsDao: PostDao) {
         postsDao.insertPosts(posts)
     }
 
+    suspend fun getPostDetails(id: Int): Post? =
+        postsDao.getPostDetails(id)
+
     fun getPosts(pageSize: Int = 10): Flow<PagingData<Post>> =
         Pager(
             config = PagingConfig(

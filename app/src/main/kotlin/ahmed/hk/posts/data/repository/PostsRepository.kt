@@ -15,6 +15,9 @@ class PostsRepository @Inject constructor(
     fun getPosts(pageSize: Int): Flow<PagingData<Post>> {
         return databaseRepository.getPosts(pageSize)
     }
+    suspend fun getPostDetails(postId: Int): Post? {
+        return databaseRepository.getPostDetails(postId)
+    }
     suspend fun refreshPosts(){
         val posts = networkRepository.getAllPosts()
         databaseRepository.savePosts(posts)

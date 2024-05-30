@@ -12,6 +12,9 @@ interface PostDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertPosts(posts: List<Post>)
 
+    @Query("SELECT * FROM posts WHERE id = :id")
+    suspend fun getPostDetails(id: Int): Post?
+
     @Query("SELECT * FROM posts ORDER BY id ASC")
     fun getAll(): PagingSource<Int,Post>
 
