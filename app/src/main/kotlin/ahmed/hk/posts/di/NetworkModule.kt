@@ -5,7 +5,10 @@ import ahmed.hk.posts.utils.Constants
 import android.content.Context
 import android.util.Log
 import com.jakewharton.retrofit2.converter.kotlinx.serialization.asConverterFactory
+import dagger.Module
 import dagger.Provides
+import dagger.hilt.InstallIn
+import dagger.hilt.components.SingletonComponent
 import kotlinx.serialization.json.Json
 import okhttp3.Cache
 import okhttp3.Interceptor
@@ -18,6 +21,8 @@ import java.util.concurrent.TimeUnit
 import javax.inject.Qualifier
 import javax.inject.Singleton
 
+@Module
+@InstallIn(SingletonComponent::class)
 object NetworkModule {
 
     private val READ_TIMEOUT = 30L
@@ -32,6 +37,7 @@ object NetworkModule {
     @Qualifier
     @Retention(AnnotationRetention.BINARY)
     annotation class HeadersInterceptor
+
     @Provides
     @Singleton
     fun provideRetrofit(client: OkHttpClient): Retrofit {
