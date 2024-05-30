@@ -1,0 +1,88 @@
+[versions]
+gradleplugin = "8.4.1"
+retrofit = "2.11.0"
+retrofitKotlinx = "1.0.0"
+okhttp3 = "4.12.0"
+kotlin = "2.0.0"
+kotlinKsp = "2.0.0-1.0.21"
+kotlinxSerialization = "1.6.3"
+testJson = "20220320"
+room = "2.6.1"
+lifecycle = "2.8.1"
+core = "1.13.1"
+appCompat = "1.7.0"
+archTesting = "2.2.0"
+activity = "1.7.1"
+fragment = "1.9.0"
+coroutines = "1.7.3"
+material = "1.12.0"
+mockk = "1.13.2"
+navigation = "2.7.7"
+constraintLayout = "2.1.4"
+recyclerView = "1.3.2"
+legacy = "1.0.0"
+gson = "2.10.1"
+datastore = "1.1.1"
+protobuf = "1.3.3"
+
+[plugins]
+android-application = { id = "com.android.application", version.ref = "gradleplugin" }
+kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+kotlin-ksp = { id = "com.google.devtools.ksp", version.ref = "kotlinKsp" }
+kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
+
+[bundles]
+lifecycle = ["lifecycle-runtime", "lifecycle-viewmodel", "lifecycle-java8"]
+room = ["room-runtime", "room-ktx", "room-paging"]
+navigation = ["navigation-fragment", "navigation-ui"]
+test = ["test-ext", "test-espresso"]
+datastore = ["datastore-preferences-core", "datastore-preferences"]
+
+[libraries]
+lifecycle-runtime = { module = "androidx.lifecycle:lifecycle-runtime-ktx", version.ref = "lifecycle" }
+lifecycle-viewmodel = { module = "androidx.lifecycle:lifecycle-viewmodel-ktx", version.ref = "lifecycle" }
+lifecycle-java8 = { module = "androidx.lifecycle:lifecycle-common-java8", version.ref = "lifecycle" }
+
+room-ktx = { module = "androidx.room:room-ktx", version.ref = "room" }
+room-paging = { module = "androidx.room:room-paging", version.ref = "room" }
+room-runtime = { module = "androidx.room:room-runtime", version.ref = "room" }
+room-compiler = { module = "androidx.room:room-compiler", version.ref = "room" }
+
+coroutines-core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "coroutines" }
+coroutines-android = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-android", version.ref = "coroutines" }
+coroutines-test = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-test", version.ref = "coroutines" }
+
+datastore-preferences = { module = "androidx.datastore:datastore-preferences", version.ref = "datastore"}
+datastore-preferences-core = { module = "androidx.datastore:datastore-preferences-core", version.ref = "datastore"}
+
+serialization-protobuf = { module = "org.jetbrains.kotlinx:kotlinx-serialization-protobuf" , version.ref = "protobuf"}
+kotlinStdLib = { module = "org.jetbrains.kotlin:kotlin-stdlib", version.ref = "kotlin" }
+junit = { module = "junit:junit", version = "4.13.2" }
+assertj = { module = "org.assertj:assertj-core", version = "3.13.2" }
+gson = { module = "com.google.code.gson:gson", version.ref = "gson" }
+kotlinx-serialization-json = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version.ref = "kotlinxSerialization" }
+
+core = {module = "androidx.core:core-ktx", version.ref = "core"}
+appCompat = {module = "androidx.appcompat:appcompat", version.ref = "appCompat"}
+fragment = { module = "androidx.fragment:fragment-ktx", version.ref = "activity" }
+activity = { module = "androidx.activity:activity-ktx", version.ref = "fragment" }
+google-material = { module = "com.google.android.material:material", version.ref = "material" }
+recyclerView = { module = "androidx.recyclerview:recyclerview", version.ref = "recyclerView"}
+constraintLayout = { module = "androidx.constraintlayout:constraintlayout", version.ref = "constraintLayout"}
+legacy = { module = "androidx.legacy:legacy-support-v4", version.ref = "legacy"}
+navigation-fragment = { module = "androidx.navigation:navigation-fragment-ktx", version.ref = "navigation"}
+navigation-ui = { module = "androidx.navigation:navigation-ui-ktx", version.ref = "navigation"}
+okhttp3 = { module = "com.squareup.okhttp3:okhttp", version.ref = "okhttp3"}
+retrofit = { module = "com.squareup.retrofit2:retrofit", version.ref = "retrofit"}
+retrofit-converter-scalars = { module = "com.squareup.retrofit2:converter-scalars", version.ref = "retrofit"}
+retrofit-converter-kotlinx = { module = "com.jakewharton.retrofit:retrofit2-kotlinx-serialization-converter", version.ref = "retrofitKotlinx"}
+retrofit-gson = { module = "com.squareup.retrofit2:converter-gson", version.ref = "retrofit"}
+retrofit-moshi = { module = "com.squareup.retrofit2:converter-moshi", version.ref = "retrofit" }
+
+test-runner = { module = "androidx.test:runner", version = "1.5.2" }
+test-ext = { module = "androidx.test.ext:junit", version = "1.1.5" }
+test-espresso = { module = "androidx.test.espresso:espresso-core", version = "3.5.1" }
+test-mockk = { module = "io.mockk:mockk", version.ref = "mockk" }
+test-core = { module = "androidx.arch.core:core-testing", version.ref = "archTesting" }
+test-json = { module = "org.json:json", version.ref = "testJson" }
+test-coroutines = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-test", version.ref = "coroutines" }
