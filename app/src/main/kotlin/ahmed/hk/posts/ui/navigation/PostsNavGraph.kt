@@ -42,9 +42,7 @@ fun PostsNavGraph(
                 navArgument(PostsArguments.POST_ID) { type = NavType.IntType }
             )
         ) {
-            PostDetailsScreen {
-                navController.navigateUp()
-            }
+            PostDetailsScreen()
         }
     }
 }
