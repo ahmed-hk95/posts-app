@@ -78,3 +78,7 @@ dependencies {
     implementation (libs.core)
     implementation (libs.appCompat)
 }
+
+tasks.withType<Test> {
+    useJUnitPlatform()
+}
